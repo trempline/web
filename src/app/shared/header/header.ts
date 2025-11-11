@@ -16,17 +16,17 @@ export class Header {
 
   ){
     effect(() => {
-       
+     
      
     });
   }
   
   isMenuOpen: boolean = false;
-  getMenuItemClass(id: number) {
-    return id;
-  }
+  isDropdownOpen: boolean = false;
+  
+  // CSS for the header menu items based ont he urlID
+  getMenuItemClass(urlID: any) {
 
-  logout(){
-    
+
   }
 }

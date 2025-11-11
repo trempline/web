@@ -1,0 +1,121 @@
+<app-header></app-header>
+<div class="bg-cream min-h-screen">
+    <main>
+      <!-- Hero Section -->
+      <section
+      class="relative bg-lime-50 h-70"
+      style="background-image: url('/assets/images/background/bg5.png'); background-size: cover;"
+    >
+      <div class="absolute inset-0 z-0"></div>
+      <div class="relative z-10 text-center px-9 py-16">
+        <h1 class="text-4xl lg:text-5xl font-bold text-gray-700 mb-4">
+           <span class="text-red-500">À Propos </span>
+        </h1>
+        <p class="text-lg text-black max-w-2xl mx-auto">
+          <!-- Discover talented musicians from across Brittany who bring our cultural heritage to life through their
+          exceptional performances -->
+        </p>
+      </div>
+    </section>
+  
+      <!-- Our Story Section -->
+      <section class="py-20 px-4 bg-white">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-4xl font-bold text-gray-800 mb-6">Notre histoire</h2>
+          <p class="text-lg text-gray-600 leading-relaxed">
+            Véronique GAUDRAT et Jean-Vincent RICHARD se sont retrouvés autour d’une même ambition : soutenir de jeunes solistes dans le développement de leur carrière grâce aux concerts qu’ils organisent à Pont Ar Gler (Plougasnou) en Bretagne chez elle, et à Serans dans le Vexin pour lui.
+<br>
+            De là est née l’idée de proposer à d’autres hôtes la possibilité d’organiser des concerts privés et ainsi de se retrouver avec des amis autour d’un pianiste ou d’un violoniste, pour écouter ces jeunes talents interpréter des œuvres qu’ils devront présenter par la suite dans des concours.
+            <br>
+            Ces concerts aident les jeunes en leur permettant de roder leur programme et d’affiner leur jeu devant un public de mélomanes bienveillants. Certains hôtes ouvrent leurs portes aux membres de l’association, ce qui vous permet, en devenant membre, d’assister à ces concerts, même si vous ne pouvez pas recevoir ces jeunes chez vous.
+            
+          </p>
+        </div>
+      </section>
+  
+          <!-- Meet the Team Section -->
+          <section class="py-20 px-4">
+            <div class="max-w-8xl mx-auto justify-items-center items-center">
+              <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">Rencontrez notre équipe </h2>
+              <p class="text-xl text-center text-gray-800 mb-12 font-bold">Membres du bureau</p>
+              <div class="flex justify-items-center items-center space-x-8">
+             
+                <div class="text-center" *ngFor="let member of bureauMembers">
+                  <img [src]="member.image" [alt]="member.name" width="150" height="150" class="rounded-full mx-auto mb-3 shadow-lg object-cover" />
+  
+                  <h3 class="text-lg font-semibold text-gray-800">{{ member.name }}</h3>
+                  <p class="text-md font-regular text-gray-800">{{ member.title }}</p>
+                
+                </div>
+              </div>
+
+              <p class="text-xl text-center text-gray-800 mb-12 mt-12 font-bold">Membres actifs</p>
+              <div class="flex justify-items-center items-center space-x-8">
+             
+                <div class="text-center" *ngFor="let member of teamMembers">
+                  <img [src]="member.image" [alt]="member.name" width="150" height="150" class="rounded-full mx-auto mb-3 shadow-lg object-cover" />
+  
+                  <h3 class="text-lg font-semibold text-gray-800">{{ member.name }}</h3>
+                  <p class="text-md font-regular text-gray-800">{{ member.title }}</p>
+                
+                </div>
+              </div>
+
+            </div>
+          </section>
+  
+ 
+
+  
+      <!-- Contact Section -->
+      <section class="py-20 px-4 bg-white">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
+          <div>
+            <h2 class="text-4xl font-bold text-gray-800 mb-4"> Nous contacter</h2>
+            <p class="text-lg text-gray-600 mb-8">
+              Nous sommes heureux d’avoir vos retours !<br> Vous pouvez nous contacter à
+            </p>
+            <div class="space-y-4">
+              <div class="flex items-center space-x-4">
+                <span class="w-6 h-6 text-pont-green">📧</span>
+                <a href="mailto:contact at pontargler.com" class="text-gray-700 hover:text-pont-rust">{{'contact@tremplinejeunessolistes.com'}}</a>
+              </div>
+              <div class="flex items-center space-x-4">
+                <span class="w-6 h-6 text-pont-green">📞</span>
+                <span class="text-gray-700">+33 (0)6 14 38 63 38</span>
+              </div>
+              <div class="flex items-center space-x-4">
+                <span class="w-6 h-6 text-pont-green">📍</span>
+                <span class="text-gray-700">23 Rue Saint-Vincent de Paul, 75010 Paris</span>
+              </div>
+            </div>
+          </div>
+  
+          <div class="p-8 shadow-xl rounded-2xl bg-white">
+            <form (submit)="onSubmit($event)">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <input name="fname" [(ngModel)]="form.fname" [disabled]="isSubmitting" placeholder="Prénom" class="h-12 border rounded px-3" />
+                <input name="lname" [(ngModel)]="form.lname" [disabled]="isSubmitting" placeholder="Nom" class="h-12 border rounded px-3" />
+              </div>
+              <input name="email" [(ngModel)]="form.email" [disabled]="isSubmitting" placeholder="Adresse e-mail" type="email" class="mb-6 h-12 w-full border rounded px-3" />
+              <textarea name="msg" [(ngModel)]="form.msg" [disabled]="isSubmitting" placeholder="Votre message" rows="5" class="mb-6 w-full border rounded p-3"></textarea>
+              <button type="submit" [disabled]="isSubmitting" class="w-full h-12 text-lg bg-slate-700 hover:bg-slate-900 disabled:opacity-70 disabled:cursor-not-allowed text-white rounded-xl flex items-center justify-center">
+                <span *ngIf="!isSubmitting">Envoyer un message</span>
+                <span *ngIf="isSubmitting" class="flex items-center">
+                  <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+                  </svg>
+                  Envoi...
+                </span>
+              </button>
+              <div *ngIf="submitSuccess" class="mt-4 text-sm text-green-700">Merci, votre message a bien été envoyé.</div>
+              <div *ngIf="submitError" class="mt-4 text-sm text-red-700">{{ submitError }}</div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <app-footer></app-footer>
+  

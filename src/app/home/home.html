@@ -63,8 +63,8 @@ dans les salons<br />
         
         <form class="space-y-4" (ngSubmit)="submitNewsletter()">
           <div class="grid md:grid-cols-2 gap-4">
-            <input type="text"  name="name" [(ngModel)]="newsletter.name" [disabled]="isSubmitting" placeholder="Prénom" class="h-12 px-3 rounded border outline-none border-slate-300 text-slate-300" />
-            <input type="text" name="phone" [(ngModel)]="newsletter.phone" [disabled]="isSubmitting" placeholder="Nom" class="h-12 px-3 rounded border outline-none border-slate-300 text-slate-300" />
+            <input type="text"  name="name" [(ngModel)]="newsletter.prenom" [disabled]="isSubmitting" placeholder="Prénom" class="h-12 px-3 rounded border outline-none border-slate-300 text-slate-300" />
+            <input type="text" name="phone" [(ngModel)]="newsletter.nom" [disabled]="isSubmitting" placeholder="Nom" class="h-12 px-3 rounded border outline-none border-slate-300 text-slate-300" />
           </div>
           <input type="email" name="email" [(ngModel)]="newsletter.email" [disabled]="isSubmitting" required placeholder="Adresse email
           " class="h-12 px-3 rounded border w-full outline-none border-slate-300 text-slate-300" />

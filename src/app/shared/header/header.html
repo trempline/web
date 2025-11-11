@@ -37,19 +37,49 @@
           ></span>
         </a>
 
-        <a
-          [routerLink]="'/events'"
-          [ngClass]="
-            'text-gray-700 hover:text-pont-green transition-all duration-300 font-medium text-xl relative group ' +
-            getMenuItemClass(2)
-          "
-        >
-          Nous soutenir
-          <span
-            [ngClass]="urlID === 2 ? 'w-full' : 'w-0 group-hover:w-full'"
-            class="absolute -bottom-1 left-0 h-0.5 bg-pont-green transition-all duration-300"
-          ></span>
-        </a>
+        <!-- Dropdown Menu -->
+        <div class="relative">
+          <button
+            (click)="isDropdownOpen = !isDropdownOpen"
+            class="cursor-pointer text-gray-700 hover:text-pont-green transition-all duration-300 font-medium text-xl relative group flex items-center space-x-1"
+          >
+            <span>Nos soutenir</span>
+            <svg
+              class="w-4 h-4 transition-transform duration-300"
+              [ngClass]="{'rotate-180': isDropdownOpen}"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+            <span
+              [ngClass]="isDropdownOpen ? 'w-full' : 'w-0 group-hover:w-full'"
+              class="absolute -bottom-1 left-0 h-0.5 bg-pont-green transition-all duration-300"
+            ></span>
+          </button>
+
+          <!-- Dropdown Content -->
+          <div
+            *ngIf="isDropdownOpen"
+            class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-100 py-2 z-50"
+          >
+            <a
+              [routerLink]="'/nous-soutenir'"
+              (click)="isDropdownOpen = false"
+              class="block px-4 py-3 text-gray-700 hover:bg-pont-green/10 hover:text-pont-green transition-all duration-200 font-medium"
+            >
+              Particuliers
+            </a>
+            <a
+              [routerLink]="'/enterprises'"
+              (click)="isDropdownOpen = false"
+              class="block px-4 py-3 text-gray-700 hover:bg-pont-green/10 hover:text-pont-green transition-all duration-200 font-medium"
+            >
+              Entreprises
+            </a>
+          </div>
+        </div>
 
       
        
