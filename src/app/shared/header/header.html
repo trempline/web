@@ -122,40 +122,57 @@
     >
       <nav class="flex flex-col space-y-6 px-6">
         <a
-          href="/#discover"
+          [routerLink]="'/'"
           class="text-gray-700 hover:text-pont-green transition-colors font-medium text-lg"
+          (click)="isMenuOpen = false"
         >
           Accueil
         </a>
-        <a href="/artists" class="text-pont-green font-medium text-lg">
-          Artistes
-        </a>
+
+        <!-- Mobile Dropdown Menu -->
+        <div class="flex flex-col space-y-2">
+          <button
+            (click)="isMobileDropdownOpen = !isMobileDropdownOpen"
+            class="text-gray-700 hover:text-pont-green transition-colors font-medium text-lg flex items-center justify-between"
+          >
+            <span>Nos soutenir</span>
+            <svg
+              class="w-4 h-4 transition-transform duration-300"
+              [ngClass]="{'rotate-180': isMobileDropdownOpen}"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          
+          <!-- Mobile Dropdown Content -->
+          <div *ngIf="isMobileDropdownOpen" class="flex flex-col space-y-3 pl-4">
+            <a
+              [routerLink]="'/nous-soutenir'"
+              class="text-gray-600 hover:text-pont-green transition-colors font-medium text-base"
+              (click)="isMenuOpen = false; isMobileDropdownOpen = false"
+            >
+              Particuliers
+            </a>
+            <a
+              [routerLink]="'/enterprises'"
+              class="text-gray-600 hover:text-pont-green transition-colors font-medium text-base"
+              (click)="isMenuOpen = false; isMobileDropdownOpen = false"
+            >
+              Entreprises
+            </a>
+          </div>
+        </div>
+
         <a
-          href="/events"
+          [routerLink]="'/about'"
           class="text-gray-700 hover:text-pont-green transition-colors font-medium text-lg"
-        >
-          Événements
-        </a>
-        <a
-          href="/#locations"
-          class="text-gray-700 hover:text-pont-green transition-colors font-medium text-lg"
-        >
-          Lieux
-        </a>
-        <a
-          href="/#about"
-          class="text-gray-700 hover:text-pont-green transition-colors font-medium text-lg"
+          (click)="isMenuOpen = false"
         >
           À propos
         </a>
-        <div class="flex flex-col space-y-3 pt-6 border-t border-gray-100">
-          <button
-            class="border border-pont-green text-pont-green hover:bg-pont-green hover:text-white w-fit bg-transparent px-4 py-2 rounded-md"
-          >
-            Connexion artiste
-          </button>
-    
-        </div>
       </nav>
     </div>
   </div>
