@@ -44,7 +44,7 @@ msg: ''
 
 
 bureauMembers: BureauMembers[] = [
-{ name: 'Jean-Jacqques Aillagon', title:'Fondateur et Stratégie', image: 'assets/images/people/jean.png' },
+{ name: 'Jean-Jacques Aillagon', title:'Fondateur et Stratégie', image: 'assets/images/people/jean.png' },
 { name: 'Véronique Gaudrat', title:'Fondatrice et présidente', image: 'assets/images/people/veronique.png' },
 { name: 'Pierre Poulain', title:'Fondateur et trésorier', image: 'assets/images/people/pierre.png' },
 
