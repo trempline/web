@@ -1,3 +1,4 @@
+
 <app-header></app-header>
 <div class="bg-cream min-h-screen">
     <main>
@@ -43,7 +44,7 @@
               <div class="text-center w-32 sm:w-36 md:w-40" *ngFor="let member of bureauMembers">
                 <img [src]="member.image" [alt]="member.name" width="150" height="150" class="rounded-full mx-auto mb-3 shadow-lg object-cover" />
 
-                <h3 class="text-base sm:text-lg font-semibold text-gray-800">{{ member.name }}</h3>
+                <h3 class="text-base sm:text-lg font-semibold text-gray-800" [innerHTML]="formatNameForDisplay(member.name)"></h3>
                 <p class="text-sm sm:text-md font-regular text-gray-800">{{ member.title }}</p>
               
               </div>
@@ -55,7 +56,7 @@
               <div class="text-center w-32 sm:w-36 md:w-40" *ngFor="let member of teamMembers">
                 <img [src]="member.image" [alt]="member.name" width="150" height="150" class="rounded-full mx-auto mb-3 shadow-lg object-cover" />
 
-                <h3 class="text-base sm:text-lg font-semibold text-gray-800">{{ member.name }}</h3>
+                <h3 class="text-base sm:text-lg font-semibold text-gray-800" [innerHTML]="formatNameForDisplay(member.name)"></h3>
                 <p class="text-sm sm:text-md font-regular text-gray-800">{{ member.title }}</p>
               
               </div>

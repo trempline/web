@@ -61,6 +61,11 @@ teamMembers: TeamMembers[] = [
   ];
 
 
+// Method to format names with line breaks for HTML display
+formatNameForDisplay(name: string): string {
+  return name.replace(/\n/g, '<br>');
+}
+
 async onSubmit(e:any){
   e.preventDefault();
 
