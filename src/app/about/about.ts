@@ -52,10 +52,10 @@ bureauMembers: BureauMembers[] = [
 
 
 teamMembers: TeamMembers[] = [
-  { name: 'Jean-Vincent Richard', title:'Fondateur et responsable des hôtes', image: 'assets/images/people/jeanv.png' },
+  { name: 'Jean-Vincent Rischard', title:'Fondateur et responsable des hôtes', image: 'assets/images/people/jeanv.png' },
   { name: 'Anne Peter Jay', title:'Juriste', image: 'assets/images/people/anne.png' },
   { name: 'Thuy Anh Vuong', title:'Sélection des artistes', image: 'assets/images/people/thuy.png' },
-  { name: 'Jean-Philippe Le-Calvé', title:'Communication', image: 'assets/images/people/jeanp.png' },
+  { name: 'Jean-Philippe    Le-Calvé', title:'Communication', image: 'assets/images/people/jeanp.png' },
   { name: 'Pascale Pouliquen', title:'En charge des hôtes', image: 'assets/images/people/pascale.png' },    
   { name: 'Véronique Dalbin', title:'Outils informatique', image: 'assets/images/people/dalbin.png' }    
   ];
